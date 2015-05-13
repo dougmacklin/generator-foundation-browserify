@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Foundation
+    link(rel='stylesheet', href='./stylesheets/app.min.css')
+    script(src='http://i.cdn.turner.com/nba/nba/.element/media/2.0/teamsites/warriors/js/modernizr-2.8.3.js')
+
+  body
+    .row
+      .small-12.columns
+        h1 Yo Foundation
+        ul
+          li Sass compiling
+          li Jade templating engine (option)
+          li Server with LiveReload
+          li Font Awesome (option)
+          li Gulp automation
+          li Browserify bundling. To use:
+            div
+              div terminal: 
+                code $ npm install someModule --save
+              div main.js: 
+                code var someModule = require('someModule');
+
+    script(src='js/bundle.js')
