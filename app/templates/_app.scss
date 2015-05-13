@@ -40,3 +40,5 @@
 @import "../../node_modules/foundation-sites/scss/foundation/components/_type";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_offcanvas";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_visibility";
+
+<% if (props.compass) { %>@import "compass/css3";<% } %>

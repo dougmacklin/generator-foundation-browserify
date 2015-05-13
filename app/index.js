@@ -23,6 +23,12 @@ module.exports = yeoman.generators.Base.extend({
     },
     {
       type: 'confirm',
+      name: 'compass',
+      message: 'Would you like to compile Scss with Compass (default: Scss with LibSass)?',
+      default: false
+    },
+    {
+      type: 'confirm',
       name: 'jade',
       message: 'Do you want to use Jade templating?',
       default: false
@@ -53,6 +59,9 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('_index.html', 'src/templates/index.html');
 
     // sass files
+    if (this.props.compass)
+      this.copy('_config.rb', 'config.rb');
+
     this.copy('_settings.scss', 'src/scss/_settings.scss');
     this.copy('_app.scss', 'src/scss/app.scss');
 

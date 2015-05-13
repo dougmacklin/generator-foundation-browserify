@@ -1,8 +1,15 @@
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var gulp = require('gulp');
-<% if (props.jade) { %>var processhtml = require('gulp-jade');<% } else { %>var processhtml = require('gulp-minify-html');<% } %>
-var sass = require('gulp-sass');
+
+<% if (props.jade) { %>
+var processhtml = require('gulp-jade');<% } else { %>
+var processhtml = require('gulp-minify-html');<% } %>
+
+<% if (!props.compass) { %>
+var sass = require('gulp-sass');<% } else { %>
+var compass = require('gulp-compass');<% } %>
+
 var watch = require('gulp-watch');
 var minifycss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
@@ -17,6 +24,7 @@ gulp.task('html', function() {
     .pipe(connect.reload());
 });
 
+<% if (!props.compass) { %>
 gulp.task('sass', function() {
   return gulp.src('./src/scss/**/*.scss')
     .pipe(sass())
@@ -26,6 +34,20 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./build/stylesheets'))
     .pipe(connect.reload());
 });
+<% } else { %>
+gulp.task('sass', function() {
+  gulp.src('./src/scss/**/*.scss')
+    .pipe(compass({
+      config_file: './config.rb',
+      css: 'build/stylesheets',
+      sass: 'src/scss'
+    }))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('./build/stylesheets'))
+    .pipe(connect.reload());
+});
+<% } %>
 
 gulp.task('js', function() {
   return browserify('./src/js/main')

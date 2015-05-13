@@ -1,8 +1,8 @@
-# generator-foundation-gulp-browserify
+# Yeoman Foundation Generator
 
 [Yeoman](http://yeoman.io) generator for [Zurb Foundation](http://foundation.zurb.com/) with:
 
-* Sass compiling
+* Sass compiling (LibSass / Compass options)
 * Jade templating engine (option)
 * Server with LiveReload
 * Font Awesome (option)
@@ -11,12 +11,12 @@
 
 ## Getting Started
 
-Install Yeoman if not already installed:
+If Yeoman isn't already installed:
 ```
 npm install -g yo
 ```
 
-Install this generator from npm:
+Install the generator:
 ```
 npm install -g generator-foundation-gulp-browserify
 ```
@@ -31,7 +31,7 @@ Run gulp to start the server:
 gulp
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/) in your browser
+View in your browser at [http://localhost:8080/](http://localhost:8080/)
 
 ## Editing
 
