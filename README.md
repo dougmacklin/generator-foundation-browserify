@@ -16,7 +16,7 @@ Install Yeoman if not already installed:
 npm install -g yo
 ```
 
-To install generator from npm, run:
+Install this generator from npm:
 ```
 npm install -g generator-foundation-gulp-browserify
 ```
@@ -35,7 +35,9 @@ Open [http://localhost:8080/](http://localhost:8080/) in your browser
 
 ## Editing
 
-Edit html/jade, scss and js files in the `src` directory. Gulp will serve production-ready versions to the `build` directory
+Edit html/jade, scss and js files in the `src` directory
+
+Gulp will serve production-ready versions to the `build` directory
 
 ## License
 
