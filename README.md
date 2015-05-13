@@ -21,15 +21,21 @@ To install generator from npm, run:
 npm install -g generator-foundation-gulp-browserify
 ```
 
-Then initiate the generator:
+Navigate to your target directory and initiate the generator:
 ```
 yo foundation-gulp-browserify
 ```
 
-Finally, run gulp to start the server and head to [http://localhost:8080/](http://localhost:8080/):
+Run gulp to start the server:
 ```
 gulp
 ```
+
+Open [http://localhost:8080/](http://localhost:8080/) in your browser
+
+## Editing
+
+Edit html/jade, scss and js files in the `src` directory. Gulp will serve production-ready versions to the `build` directory
 
 ## License
 
