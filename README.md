@@ -26,6 +26,11 @@ Then initiate the generator:
 yo foundation-gulp-browserify
 ```
 
+Finally, run gulp to start the server and head to [http://localhost:8080/](http://localhost:8080/):
+```
+gulp
+```
+
 ## License
 
 MIT
