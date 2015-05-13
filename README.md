@@ -11,11 +11,12 @@
 
 ## Getting Started
 
+Install Yeoman is not installed:
 ```
 npm install -g yo
 ```
 
-To install from npm, run:
+To install generator from npm, run:
 ```
 npm install -g generator-foundation-gulp-browserify
 ```

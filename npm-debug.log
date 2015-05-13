@@ -1,0 +1,97 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish', './' ]
+2 info using npm@2.8.4
+3 info using node@v0.10.33
+4 verbose publish [ './' ]
+5 silly cache add args [ './', null ]
+6 verbose cache add spec ./
+7 silly cache add parsed spec { raw: './',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: './',
+7 silly cache add   spec: '/Users/dmacklin/Sites/yeoman/generator-foundation-gulp-browserify',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package.tgz',
+9 verbose tar pack   '/Users/dmacklin/Sites/yeoman/generator-foundation-gulp-browserify' ]
+10 verbose tarball /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package.tgz
+11 verbose folder /Users/dmacklin/Sites/yeoman/generator-foundation-gulp-browserify
+12 info prepublish generator-foundation-gulp-browserify@0.0.0
+13 verbose addLocalTarball adding from inside cache /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package.tgz
+14 silly cache afterAdd generator-foundation-gulp-browserify@0.0.0
+15 verbose afterAdd /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package/package.json not in flight; writing
+16 verbose afterAdd /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package/package.json written
+17 silly publish { name: 'generator-foundation-gulp-browserify',
+17 silly publish   version: '0.0.0',
+17 silly publish   description: 'Foundation, Sass, Gulp, Browserify, Live Reload',
+17 silly publish   license: 'MIT',
+17 silly publish   main: 'app/index.js',
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/dougmacklin/generator-foundation-gulp-browserify.git' },
+17 silly publish   author: { name: 'Doug Macklin', url: 'https://github.com/dougmacklin' },
+17 silly publish   scripts: { test: 'mocha' },
+17 silly publish   files: [ 'app' ],
+17 silly publish   keywords: [ 'yeoman-generator' ],
+17 silly publish   dependencies:
+17 silly publish    { 'yeoman-generator': '^0.19.0',
+17 silly publish      chalk: '^1.0.0',
+17 silly publish      yosay: '^1.0.2' },
+17 silly publish   devDependencies: { mkdirp: '^0.5.0', mocha: '*' },
+17 silly publish   readme: '# generator-foundation-gulp-browserify\n\n[Yeoman](http://yeoman.io) generator for [Zurb Foundation](http://foundation.zurb.com/) with:\n\n* Sass compiling\n* Jade templating engine (option)\n* Server with LiveReload\n* Font Awesome (option)\n* Gulp automation\n* Browserify\n\n## Getting Started\n\nInstall Yeoman is not installed:\n```\nnpm install -g yo\n```\n\nTo install generator from npm, run:\n```\nnpm install -g generator-foundation-gulp-browserify\n```\n\nThen initiate the generator:\n```\nyo foundation-gulp-browserify\n```\n\n## License\n\nMIT\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: 'afead9067ed653eff6c18c2c8254a73b1d0b3204',
+17 silly publish   bugs: { url: 'https://github.com/dougmacklin/generator-foundation-gulp-browserify/issues' },
+17 silly publish   homepage: 'https://github.com/dougmacklin/generator-foundation-gulp-browserify#readme',
+17 silly publish   _id: 'generator-foundation-gulp-browserify@0.0.0',
+17 silly publish   _shasum: 'c1e1072c8efe3f1b7f15bcc17f75895099b9a841',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name generator-foundation-gulp-browserify
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/generator-foundation-gulp-browserify
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /Users/dmacklin/.npm/generator-foundation-gulp-browserify/0.0.0/package.tgz
+24 verbose request uri https://registry.npmjs.org/generator-foundation-gulp-browserify
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 19:08:09
+27 verbose request using bearer token for auth
+28 verbose request id bfa689c782707d75
+29 http request PUT https://registry.npmjs.org/generator-foundation-gulp-browserify
+30 http 403 https://registry.npmjs.org/generator-foundation-gulp-browserify
+31 verbose headers { 'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=60',
+31 verbose headers   'content-length': '95',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   date: 'Wed, 13 May 2015 02:08:11 GMT',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-served-by': 'cache-lax1426-LAX',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1431482890.350971,VS0,VE1140' }
+32 verbose request invalidating /Users/dmacklin/.npm/registry.npmjs.org/generator-foundation-gulp-browserify on PUT
+33 error publish Failed PUT 403
+34 verbose stack Error: "You cannot publish over the previously published version 0.0.0." : generator-foundation-gulp-browserify
+34 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+34 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+34 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:368:22)
+34 verbose stack     at Request.emit (events.js:98:17)
+34 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1219:14)
+34 verbose stack     at Request.emit (events.js:117:20)
+34 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1167:12)
+34 verbose stack     at IncomingMessage.emit (events.js:117:20)
+34 verbose stack     at _stream_readable.js:943:16
+34 verbose stack     at process._tickCallback (node.js:419:13)
+35 verbose statusCode 403
+36 verbose pkgid generator-foundation-gulp-browserify
+37 verbose cwd /Users/dmacklin/Sites/yeoman/generator-foundation-gulp-browserify
+38 error Darwin 14.3.0
+39 error argv "node" "/usr/local/bin/npm" "publish" "./"
+40 error node v0.10.33
+41 error npm  v2.8.4
+42 error code E403
+43 error "You cannot publish over the previously published version 0.0.0." : generator-foundation-gulp-browserify
+44 error If you need help, you may report this error at:
+44 error     <https://github.com/npm/npm/issues>
+45 verbose exit [ 1, true ]
