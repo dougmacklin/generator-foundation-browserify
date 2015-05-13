@@ -11,7 +11,7 @@
 
 ## Getting Started
 
-Install Yeoman is not installed:
+Install Yeoman if not already installed:
 ```
 npm install -g yo
 ```
