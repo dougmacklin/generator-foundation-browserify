@@ -17,6 +17,11 @@ var streamify = require('gulp-streamify');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 
+var onError = function(err) {
+  console.log(err.message);
+  this.emit('end');
+};
+
 gulp.task('html', function() {
   return gulp.src('./src/templates/**/*')
     .pipe(processhtml())
@@ -28,6 +33,7 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
   return gulp.src('./src/scss/**/*.scss')
     .pipe(sass())
+    .on('error', onError)
     .pipe(gulp.dest('./build/stylesheets'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
@@ -42,6 +48,7 @@ gulp.task('sass', function() {
       css: 'build/stylesheets',
       sass: 'src/scss'
     }))
+    .on('error', onError)
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('./build/stylesheets'))
@@ -52,6 +59,7 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
   return browserify('./src/js/main')
     .bundle()
+    .on('error', onError)
     .pipe(source('bundle.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest('./build/js'))
