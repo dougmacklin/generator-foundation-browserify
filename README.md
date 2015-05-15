@@ -26,9 +26,9 @@ Navigate to your target directory and initiate the generator:
 yo foundation-gulp-browserify
 ```
 
-Run gulp to start the server:
+Start the server:
 ```
-gulp
+npm start
 ```
 
 View in your browser at [http://localhost:8080/](http://localhost:8080/)

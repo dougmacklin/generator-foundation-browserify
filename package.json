@@ -25,7 +25,6 @@
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mkdirp": "^0.5.0",
     "mocha": "*"
   }
 }
