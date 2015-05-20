@@ -26,9 +26,14 @@ Navigate to your target directory and initiate the generator:
 yo foundation-gulp-browserify
 ```
 
-Start the server:
+Run `gulp` to start the server and watch for changes:
 ```
-npm start
+gulp
+```
+
+Include the `--prod` flag to export production-ready minified files (note: increases gulp task time, leave off for dev purposes):
+```
+gulp --prod
 ```
 
 View in your browser at [http://localhost:8080/](http://localhost:8080/)
@@ -37,7 +42,7 @@ View in your browser at [http://localhost:8080/](http://localhost:8080/)
 
 Edit html/jade, scss and js files in the `src` directory
 
-Gulp will serve production-ready versions to the `build` directory
+Gulp will serve finalized versions to the `build` directory
 
 ## License
 

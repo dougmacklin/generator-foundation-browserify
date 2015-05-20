@@ -1,6 +1,8 @@
+var watchify = require('watchify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 <% if (props.jade) { %>
 var processhtml = require('gulp-jade');<% } else { %>
@@ -17,11 +19,34 @@ var streamify = require('gulp-streamify');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 
+var prod = gutil.env.prod;
+
 var onError = function(err) {
   console.log(err.message);
   this.emit('end');
 };
 
+// bundling js with browserify and watchify
+var b = watchify(browserify('./src/js/main', {
+  cache: {},
+  packageCache: {},
+  fullPaths: true
+}));
+
+gulp.task('js', bundle);
+b.on('update', bundle);
+b.on('log', gutil.log);
+
+function bundle() {
+  return b.bundle()
+    .on('error', onError)
+    .pipe(source('bundle.js'))
+    .pipe(prod ? streamify(uglify()) : gutil.noop())
+    .pipe(gulp.dest('./build/js'))
+    .pipe(connect.reload());
+}
+
+// html
 gulp.task('html', function() {
   return gulp.src('./src/templates/**/*')
     .pipe(processhtml())
@@ -56,20 +81,9 @@ gulp.task('sass', function() {
 });
 <% } %>
 
-gulp.task('js', function() {
-  return browserify('./src/js/main')
-    .bundle()
-    .on('error', onError)
-    .pipe(source('bundle.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('./build/js'))
-    .pipe(connect.reload());
-});
-
 gulp.task('watch', function() {
   gulp.watch('./src/templates/**/*', ['html']);
   gulp.watch('./src/scss/**/*.scss', ['sass']);
-  gulp.watch('./src/js/**/*.js', ['js']);
 });
 
 gulp.task('connect', function() {
