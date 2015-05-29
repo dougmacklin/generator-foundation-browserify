@@ -36,8 +36,6 @@ Include the `--prod` flag to export production-ready minified files (note: incre
 gulp --prod
 ```
 
-View in your browser at [http://localhost:8080/](http://localhost:8080/)
-
 ## Editing
 
 Edit html/jade, scss and js files in the `src` directory

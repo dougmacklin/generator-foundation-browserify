@@ -18,14 +18,14 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.7.6",
     "browserify": "^10.1.2",
     "browserify-shim": "^3.8.6",
-    "gulp": "^3.8.11",
-    "gulp-connect": "^2.2.0",<% if (props.jade) { %>
+    "gulp": "^3.8.11",<% if (props.jade) { %>
     "gulp-jade": "^1.0.0",<% } else { %>
     "gulp-minify-html": "^1.0.2",<% } %>
     "gulp-minify-css": "^1.1.1",
-    "gulp-rename": "^1.2.2",<% if (!props.compass) { %>
+    "gulp-sequence": "^0.3.2",<% if (!props.compass) { %>
     "gulp-sass": "^2.0.0",<% } else { %>
     "gulp-compass": "^2.0.4",<% } %>
     "gulp-streamify": "0.0.5",

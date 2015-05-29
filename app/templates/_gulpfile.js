@@ -1,25 +1,17 @@
-var watchify = require('watchify');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-<% if (props.jade) { %>
-var processhtml = require('gulp-jade');<% } else { %>
-var processhtml = require('gulp-minify-html');<% } %>
-
-<% if (!props.compass) { %>
-var sass = require('gulp-sass');<% } else { %>
-var compass = require('gulp-compass');<% } %>
-
-var watch = require('gulp-watch');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var streamify = require('gulp-streamify');
-var rename = require('gulp-rename');
-var connect = require('gulp-connect');
-
-var prod = gutil.env.prod;
+var browserSync  = require('browser-sync');
+var watchify     = require('watchify');
+var browserify   = require('browserify');
+var source       = require('vinyl-source-stream');
+var gulp         = require('gulp');
+var gutil        = require('gulp-util');
+var gulpSequence = require('gulp-sequence');
+<% if (props.jade) { %>var processhtml  = require('gulp-jade');<% } else { %>var processhtml  = require('gulp-minify-html');<% } %>
+<% if (!props.compass) { %>var sass         = require('gulp-sass');<% } else { %>var compass      = require('gulp-compass');<% } %>
+var watch        = require('gulp-watch');
+var minifycss    = require('gulp-minify-css');
+var uglify       = require('gulp-uglify');
+var streamify    = require('gulp-streamify');
+var prod         = gutil.env.prod;
 
 var onError = function(err) {
   console.log(err.message);
@@ -43,7 +35,7 @@ function bundle() {
     .pipe(source('bundle.js'))
     .pipe(prod ? streamify(uglify()) : gutil.noop())
     .pipe(gulp.dest('./build/js'))
-    .pipe(connect.reload());
+    .pipe(browserSync.stream());
 }
 
 // html
@@ -51,22 +43,18 @@ gulp.task('html', function() {
   return gulp.src('./src/templates/**/*')
     .pipe(processhtml())
     .pipe(gulp.dest('build'))
-    .pipe(connect.reload());
+    .pipe(browserSync.stream());
 });
 
-<% if (!props.compass) { %>
-gulp.task('sass', function() {
+// sass
+<% if (!props.compass) { %>gulp.task('sass', function() {
   return gulp.src('./src/scss/**/*.scss')
     .pipe(sass())
     .on('error', onError)
+    .pipe(prod ? minifycss() : gutil.noop())
     .pipe(gulp.dest('./build/stylesheets'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
-    .pipe(gulp.dest('./build/stylesheets'))
-    .pipe(connect.reload());
-});
-<% } else { %>
-gulp.task('sass', function() {
+    .pipe(browserSync.stream());
+});<% } else { %>gulp.task('sass', function() {
   gulp.src('./src/scss/**/*.scss')
     .pipe(compass({
       config_file: './config.rb',
@@ -74,23 +62,22 @@ gulp.task('sass', function() {
       sass: 'src/scss'
     }))
     .on('error', onError)
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
+    .pipe(prod ? minifycss() : gutil.noop())
     .pipe(gulp.dest('./build/stylesheets'))
-    .pipe(connect.reload());
-});
-<% } %>
+    .pipe(browserSync.stream());
+});<% } %>
 
-gulp.task('watch', function() {
+// browser sync server for live reload
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: './build'
+    }
+  });
+
   gulp.watch('./src/templates/**/*', ['html']);
   gulp.watch('./src/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('connect', function() {
-  connect.server({
-    root: 'build',
-    livereload: true
-  });
-});
-
-gulp.task('default', ['html', 'sass', 'js', 'watch', 'connect']);
+// use gulp-sequence to finish building html, sass and js before first page load
+gulp.task('default', gulpSequence(['html', 'sass', 'js'], 'serve'));
