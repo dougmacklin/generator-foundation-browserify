@@ -4,10 +4,10 @@
 
 * Sass compiling (LibSass / Compass options)
 * Jade templating engine (option)
-* Server with LiveReload
+* BrowserSync server with Live Reloading
 * Font Awesome (option)
 * Gulp automation
-* Browserify
+* Browserify with Watchify and Browserify Shim
 
 ## Getting Started
 
