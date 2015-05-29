@@ -1,5 +1,5 @@
 @charset 'UTF-8';
-<% if (props.fontAwesome) { %>@import "../../node_modules/font-awesome/css/font-awesome.min.css";<% } %>
+<% if (props.fontAwesome) { %>@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";<% } %>
 
 @import "settings";
 

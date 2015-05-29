@@ -36,7 +36,6 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
-    <% if (props.fontAwesome) { %>"font-awesome": "^4.3.0",<% } %>
     "foundation-sites": "^5.5.2",
     "jquery": "^2.1.4"
   },
