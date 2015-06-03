@@ -52,6 +52,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_bower.json', 'bower.json');
     this.copy('_gulpfile.js', 'gulpfile.js');
     this.copy('_README.md', 'README.md');
+    this.copy('_.gitignore', '.gitignore');
 
     // html / jade templates
     if (this.props.jade)
