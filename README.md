@@ -3,11 +3,12 @@
 [Yeoman](http://yeoman.io) generator for [Zurb Foundation](http://foundation.zurb.com/) with:
 
 * Sass compiling (LibSass / Compass options)
-* Jade templating engine (option)
-* BrowserSync server with Live Reloading
-* Font Awesome (option)
+* Browserify dependency bundling
 * Gulp automation
-* Browserify with Watchify and Browserify Shim
+* BrowserSync server with live reloading
+* Bourbon mixin library (option)
+* Jade templating engine (option)
+* Font Awesome (option)
 
 ## Getting Started
 

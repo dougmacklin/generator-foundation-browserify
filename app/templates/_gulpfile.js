@@ -49,7 +49,9 @@ gulp.task('html', function() {
 // sass
 <% if (!props.compass) { %>gulp.task('sass', function() {
   return gulp.src('./src/scss/**/*.scss')
-    .pipe(sass())
+    .pipe(sass(<% if (props.bourbon) { %>{
+      includePaths: require('node-bourbon').includePaths
+    }<% } %>))
     .on('error', onError)
     .pipe(prod ? minifycss() : gutil.noop())
     .pipe(gulp.dest('./build/stylesheets'))

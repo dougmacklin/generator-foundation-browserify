@@ -1,8 +1,8 @@
 @charset 'UTF-8';
 <% if (props.fontAwesome) { %>@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";<% } %>
-
+<% if (props.bourbon) { %>@import "bourbon";<% } %>
+<% if (props.compass) { %>@import "compass/css3";<% } %>
 @import "settings";
-
 @import "../../node_modules/foundation-sites/scss/foundation/components/_grid";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_accordion";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_alert-boxes";
@@ -40,5 +40,3 @@
 @import "../../node_modules/foundation-sites/scss/foundation/components/_type";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_offcanvas";
 @import "../../node_modules/foundation-sites/scss/foundation/components/_visibility";
-
-<% if (props.compass) { %>@import "compass/css3";<% } %>

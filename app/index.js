@@ -28,6 +28,15 @@ module.exports = yeoman.generators.Base.extend({
       default: false
     },
     {
+      when: function(response) {
+        return !response.compass;
+      },
+      type: 'confirm',
+      name: 'bourbon',
+      message: 'Would you like to include the Bourbon mixin library for Sass?',
+      default: true
+    },
+    {
       type: 'confirm',
       name: 'jade',
       message: 'Do you want to use Jade templating?',
