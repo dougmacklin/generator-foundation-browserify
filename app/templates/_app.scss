@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-<% if (props.fontAwesome) { %>@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";<% } %>
 <% if (props.bourbon) { %>@import "bourbon";<% } %>
 <% if (props.compass) { %>@import "compass/css3";<% } %>
 @import "settings";
