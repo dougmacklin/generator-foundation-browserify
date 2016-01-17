@@ -1,41 +1,14 @@
 @charset 'UTF-8';
+
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.1.1
+ */
+
 <% if (props.bourbon) { %>@import "bourbon";<% } %>
 <% if (props.compass) { %>@import "compass/css3";<% } %>
 @import "settings";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_grid";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_accordion";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_alert-boxes";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_block-grid";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_breadcrumbs";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_button-groups";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_buttons";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_clearing";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_dropdown";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_dropdown-buttons";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_flex-video";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_forms";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_icon-bar";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_inline-lists";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_joyride";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_keystrokes";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_labels";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_magellan";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_orbit";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_pagination";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_panels";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_pricing-tables";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_progress-bars";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_range-slider";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_reveal";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_side-nav";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_split-buttons";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_sub-nav";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_switches";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_tables";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_tabs";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_thumbs";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_tooltips";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_top-bar";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_type";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_offcanvas";
-@import "../../node_modules/foundation-sites/scss/foundation/components/_visibility";
+@import "../../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-everything;
+

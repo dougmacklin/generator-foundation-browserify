@@ -2,6 +2,7 @@ var browserSync  = require('browser-sync');
 var watchify     = require('watchify');
 var browserify   = require('browserify');
 var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
 var gulpSequence = require('gulp-sequence');
@@ -11,6 +12,9 @@ var watch        = require('gulp-watch');
 var minifycss    = require('gulp-minify-css');
 var uglify       = require('gulp-uglify');
 var streamify    = require('gulp-streamify');
+var sourcemaps   = require('gulp-sourcemaps');
+var concat       = require('gulp-concat');
+var babel        = require('gulp-babel');
 var prod         = gutil.env.prod;
 
 var onError = function(err) {
@@ -33,6 +37,13 @@ function bundle() {
   return b.bundle()
     .on('error', onError)
     .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(concat('bundle.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(prod ? streamify(uglify()) : gutil.noop())
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.stream());
