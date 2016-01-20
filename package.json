@@ -1,5 +1,5 @@
 {
-  "name": "generator-foundation-gulp-browserify",
+  "name": "generator-foundation-browserify",
   "version": "0.2.1",
   "description": "Foundation, Sass, Gulp, Browserify, Babel for ECMAScript 6, BrowserSync Live Reloading",
   "license": "MIT",
