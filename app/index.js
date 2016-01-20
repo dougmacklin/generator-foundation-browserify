@@ -23,6 +23,21 @@ module.exports = yeoman.generators.Base.extend({
     },
     {
       type: 'confirm',
+      name: 'foundationVersion',
+      message: 'Would you like to use Foundation 6 (answer \'no\' for Foundation 5)',
+      default: true
+    },
+    {
+      when: function(response) {
+        return response.foundationVersion;
+      },
+      type: 'confirm',
+      name: 'flexbox',
+      message: 'Would you like to use the Flexbox-powered grid?',
+      default: true
+    },
+    {
+      type: 'confirm',
       name: 'compass',
       message: 'Would you like to compile Scss with Compass (default: Scss with LibSass)?',
       default: false
@@ -69,12 +84,19 @@ module.exports = yeoman.generators.Base.extend({
     else
       this.copy('_index.html', 'src/templates/index.html');
 
-    // sass files
+    // if using compass
     if (this.props.compass)
       this.copy('_config.rb', 'config.rb');
 
-    this.copy('_settings.scss', 'src/scss/_settings.scss');
-    this.copy('_app.scss', 'src/scss/app.scss');
+    // sass files for either foundation 6 or 5
+    if (this.props.foundationVersion) {
+      this.copy('_settings-foundation-6.scss', 'src/scss/_settings.scss');
+      this.copy('_app-foundation-6.scss', 'src/scss/app.scss');
+    }
+    else {
+      this.copy('_settings-foundation-5.scss', 'src/scss/_settings.scss');
+      this.copy('_app-foundation-5.scss', 'src/scss/app.scss');
+    }
 
     this.copy('_main.js', 'src/js/main.js');
   },
