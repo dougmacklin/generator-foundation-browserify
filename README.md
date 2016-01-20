@@ -21,7 +21,7 @@ npm install -g yo
 
 Install the generator from [npm](https://www.npmjs.com/package/generator-foundation-gulp-browserify):
 ```
-npm install -g generator-foundation-gulp-browserify
+npm install -g generator-foundation-browserify
 ```
 
 Navigate to your target directory and initiate the generator:
