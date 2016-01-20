@@ -19,7 +19,7 @@ If Yeoman isn't already installed:
 npm install -g yo
 ```
 
-Install the generator from [npm](https://www.npmjs.com/package/generator-foundation-gulp-browserify):
+Install the generator from [npm](https://www.npmjs.com/package/generator-foundation-browserify):
 ```
 npm install -g generator-foundation-browserify
 ```
