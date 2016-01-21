@@ -8,6 +8,7 @@
 * Gulp automation
 * BrowserSync server with live reloading
 * Babel for ECMAScript 6 ([2015 preset](http://babeljs.io/docs/plugins/preset-es2015/))
+* Autoprefixer for CSS Vendor Prefixes
 * Bourbon mixin library (option)
 * Jade templating engine (option)
 * Font Awesome (option)
@@ -34,7 +35,7 @@ Run `gulp` to start the server and watch for changes:
 gulp
 ```
 
-Include the `--prod` flag to export production-ready minified files with ES2015 polyfills (note: increases gulp task time, leave off for dev purposes):
+Include the `--prod` flag to export production-ready minified files with CSS vendor autoprefixing and ES2015 polyfills (note: increases gulp task time, leave off for dev purposes):
 ```
 gulp --prod
 ```

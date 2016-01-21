@@ -76,6 +76,10 @@ gulp.task('html', function() {
     }))
     .on('error', onError)
     .pipe(prod ? minifycss() : gutil.noop())
+    .pipe(prod ? autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }) : gutil.noop())
     .pipe(gulp.dest('./build/stylesheets'))
     .pipe(browserSync.stream());
 });<% } %>

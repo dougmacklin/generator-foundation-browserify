@@ -22,16 +22,17 @@
     "browser-sync": "^2.7.6",
     "browserify": "^10.1.2",
     "browserify-shim": "^3.8.6",
-    "gulp": "^3.8.11",<% if (props.jade) { %>
-    "gulp-jade": "^1.0.0",<% } else { %>
-    "gulp-minify-html": "^1.0.2",<% } %>
-    "gulp-minify-css": "^1.1.1",
-    "gulp-sequence": "^0.3.2",<% if (!props.compass) { %>
-    "gulp-sass": "^2.0.0",<% } else { %>
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.1",<% if (props.compass) { %>
     "gulp-compass": "^2.0.4",<% } %>
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.0",<% if (props.jade) { %>
+    "gulp-jade": "^1.0.0",<% } %>
+    "gulp-minify-css": "^1.1.1",<% if (!props.jade) { %>
+    "gulp-minify-html": "^1.0.2",<% } %><% if (!props.compass) { %>
+    "gulp-sass": "^2.0.0",<% } %>
+    "gulp-sequence": "^0.3.2",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-babel": "^6.1.1",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
