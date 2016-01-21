@@ -1,6 +1,6 @@
 {
   "name": "generator-foundation-browserify",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Foundation 6, Sass, Gulp, Browserify, Babel for ECMAScript 6, Autoprefixer, BrowserSync Live Reloading",
   "license": "MIT",
   "main": "app/index.js",

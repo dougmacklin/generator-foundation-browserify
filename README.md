@@ -3,7 +3,7 @@
 [Yeoman](http://yeoman.io) generator for [Zurb Foundation](http://foundation.zurb.com/) with:
 
 * Foundation 6 (Foundation 5 option)
-* Sass compiling (LibSass / Compass options)
+* Sass compiling (LibSass, Compass option available for Foundation 5)
 * Browserify dependency bundling
 * Gulp automation
 * BrowserSync server with live reloading

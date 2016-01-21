@@ -37,6 +37,9 @@ module.exports = yeoman.generators.Base.extend({
       default: true
     },
     {
+      when: function(response) {
+        return !response.foundationVersion;
+      },
       type: 'confirm',
       name: 'compass',
       message: 'Would you like to compile Scss with Compass (default: Scss with LibSass)?',
