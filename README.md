@@ -26,7 +26,7 @@ npm install -g generator-foundation-browserify
 
 Navigate to your target directory and initiate the generator:
 ```
-yo foundation-gulp-browserify
+yo foundation-browserify
 ```
 
 Run `gulp` to start the server and watch for changes:
