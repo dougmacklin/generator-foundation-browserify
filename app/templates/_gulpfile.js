@@ -61,9 +61,9 @@ gulp.task('html', function() {
 // sass
 <% if (!props.compass) { %>gulp.task('sass', function() {
   return gulp.src('./src/scss/**/*.scss')
-    .pipe(sass(<% if (props.bourbon) { %>{
-      includePaths: require('node-bourbon').includePaths
-    }<% } %>))
+    .pipe(sass({
+      includePaths: [].concat(<% if (props.bourbon) { %>require('node-bourbon').includePaths, <% } %>['node_modules/foundation-sites/scss'<% if (props.motionUI) { %>, 'node_modules/motion-ui/src'<% } %>])
+    }))
     .on('error', onError)
     .pipe(prod ? minifycss() : gutil.noop())
     .pipe(prod ? autoprefixer({

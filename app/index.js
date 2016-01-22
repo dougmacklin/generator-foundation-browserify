@@ -38,6 +38,15 @@ module.exports = yeoman.generators.Base.extend({
     },
     {
       when: function(response) {
+        return response.foundationVersion;
+      },
+      type: 'confirm',
+      name: 'motionUI',
+      message: 'Would you like to include Foundation\'s Motion UI Sass library?',
+      default: true
+    },
+    {
+      when: function(response) {
         return !response.foundationVersion;
       },
       type: 'confirm',

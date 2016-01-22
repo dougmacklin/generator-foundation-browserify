@@ -10,8 +10,9 @@
 * Babel for ECMAScript 6 ([2015 preset](http://babeljs.io/docs/plugins/preset-es2015/))
 * Autoprefixer for CSS Vendor Prefixes
 * Bourbon mixin library (option)
-* Jade templating engine (option)
+* Foundation's [Motion UI](http://foundation.zurb.com/sites/docs/motion-ui.html) sass library (option)
 * Font Awesome (option)
+* Jade templating engine (option)
 
 ## Getting Started
 

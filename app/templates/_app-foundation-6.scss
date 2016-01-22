@@ -2,9 +2,9 @@
 
 <% if (props.bourbon) { %>@import "bourbon";<% } %>
 <% if (props.compass) { %>@import "compass/css3";<% } %>
-
 @import 'settings';
-@import '../../node_modules/foundation-sites/scss/foundation';
+@import 'foundation';<% if (props.motionUI) { %>
+@import 'motion-ui';<% } %>
 
 @include foundation-global-styles;
 <% if (props.flexbox) { %>@include foundation-flex-grid;<% } else { %>@include foundation-grid;<% } %>
@@ -41,3 +41,6 @@
 @include foundation-title-bar;
 @include foundation-tooltip;
 @include foundation-top-bar;
+
+<% if (props.motionUI) { %>@include motion-ui-transitions;
+@include motion-ui-animations;<% } %>
