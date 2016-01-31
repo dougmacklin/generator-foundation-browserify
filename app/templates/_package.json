@@ -45,7 +45,7 @@
   },
   "dependencies": {
     <% if (props.foundationVersion) { %>"foundation-sites": "^6.1.2"<% } else { %>"foundation-sites": "^5.5.3"<% } %>,
-    "jquery": "^2.1.4"
+    <% if (props.foundationVersion) { %>"jquery": "^2.1.4"<% } else { %>"jquery": "2.1.4"<% } %>
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
