@@ -3,25 +3,24 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Foundation<% if (props.fontAwesome) { %>
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
-    <% } %>link(rel='stylesheet', href='./stylesheets/app.css')
+    title Foundation
+    <% if (props.fontAwesome) { %>link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')<% } %>
+    link(rel='stylesheet', href='./stylesheets/app.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
 
   body
     .row
       .small-12.columns
-        h1 Yo Foundation
-        ul
-          li Sass compiling (LibSass / Compass options)
-          li Jade templating engine (option)
-          li BrowserSync server with live reloading
-          li Font Awesome (option)
-          li Gulp automation
-          li Browserify bundling. To use:
-            div terminal: 
-              code $ npm install someModule --save
-            div main.js: 
-              code var someModule = require('someModule');
+        h1 Foundation + Browserify Project Generator
+        p
+          | Improve your workflow by harnessing the power of 
+          a(href='http://browserify.org/', target='_blank') Browserify
+          |  with your 
+          a(href='http://foundation.zurb.com/', target='_blank') Foundation
+          |  projects!
+        p
+          | If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check out the 
+          a(href='https://github.com/dougmacklin/generator-foundation-browserify#overview', target='_blank') Generator Overview
+          |  in the readme.
 
     script(src='js/bundle.js')

@@ -8,14 +8,14 @@ var gutil        = require('gulp-util');
 var gulpSequence = require('gulp-sequence');
 <% if (props.jade) { %>var processhtml  = require('gulp-jade');<% } else { %>var processhtml  = require('gulp-minify-html');<% } %>
 <% if (!props.compass) { %>var sass         = require('gulp-sass');<% } else { %>var compass      = require('gulp-compass');<% } %>
-var autoprefixer = require('gulp-autoprefixer');
+<% if (props.autoprefixer) { %>var autoprefixer = require('gulp-autoprefixer');<% } %>
 var watch        = require('gulp-watch');
 var minifycss    = require('gulp-minify-css');
 var uglify       = require('gulp-uglify');
 var streamify    = require('gulp-streamify');
 var sourcemaps   = require('gulp-sourcemaps');
 var concat       = require('gulp-concat');
-var babel        = require('gulp-babel');
+<% if (props.babel) { %>var babel        = require('gulp-babel');<% } %>
 var prod         = gutil.env.prod;
 
 var onError = function(err) {
@@ -40,10 +40,10 @@ function bundle() {
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(!prod ? sourcemaps.init() : gutil.noop())
-    .pipe(prod ? babel({
+    <% if (props.babel) { %>.pipe(prod ? babel({
       presets: ['es2015']
     }) : gutil.noop())
-    .pipe(concat('bundle.js'))
+    <% } %>.pipe(concat('bundle.js'))
     .pipe(!prod ? sourcemaps.write('.') : gutil.noop())
     .pipe(prod ? streamify(uglify()) : gutil.noop())
     .pipe(gulp.dest('./build/js'))
@@ -66,11 +66,11 @@ gulp.task('html', function() {
     }))
     .on('error', onError)
     .pipe(prod ? minifycss() : gutil.noop())
-    .pipe(prod ? autoprefixer({
+    <% if (props.autoprefixer) { %>.pipe(prod ? autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }) : gutil.noop())
-    .pipe(gulp.dest('./build/stylesheets'))
+    <% } %>.pipe(gulp.dest('./build/stylesheets'))
     .pipe(browserSync.stream());
 });<% } else { %>gulp.task('sass', function() {
   gulp.src('./src/scss/**/*.scss')
@@ -81,11 +81,11 @@ gulp.task('html', function() {
     }))
     .on('error', onError)
     .pipe(prod ? minifycss() : gutil.noop())
-    .pipe(prod ? autoprefixer({
+    <% if (props.autoprefixer) { %>.pipe(prod ? autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }) : gutil.noop())
-    .pipe(gulp.dest('./build/stylesheets'))
+    <% } %>.pipe(gulp.dest('./build/stylesheets'))
     .pipe(browserSync.stream());
 });<% } %>
 

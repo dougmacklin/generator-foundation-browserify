@@ -22,9 +22,9 @@
     "browser-sync": "^2.7.6",
     "browserify": "^10.1.2",
     "browserify-shim": "^3.8.6",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^6.1.1",<% if (props.compass) { %>
+    "gulp": "^3.8.11",<% if (props.autoprefixer) { %>
+    "gulp-autoprefixer": "^3.1.0",<% } %><% if (props.babel) { %>
+    "gulp-babel": "^6.1.1",<% } %><% if (props.compass) { %>
     "gulp-compass": "^2.0.4",<% } %>
     "gulp-concat": "^2.6.0",<% if (props.jade) { %>
     "gulp-jade": "^1.0.0",<% } %>
@@ -44,8 +44,8 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
-    <% if (props.foundationVersion) { %>"foundation-sites": "^6.1.2"<% } else { %>"foundation-sites": "^5.5.3"<% } %>,
-    <% if (props.foundationVersion) { %>"jquery": "^2.1.4"<% } else { %>"jquery": "2.1.4"<% } %>
+    <% if (props.foundationVersion === 'Foundation 6') { %>"foundation-sites": "^6.1.2"<% } else { %>"foundation-sites": "^5.5.3"<% } %>,
+    <% if (props.foundationVersion === 'Foundation 6') { %>"jquery": "^2.1.4"<% } else { %>"jquery": "2.1.4"<% } %>
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
