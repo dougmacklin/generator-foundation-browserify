@@ -72,13 +72,13 @@ This generator will scaffold out a project folder to get you up and running with
 
 #### Yeoman Project Generator
 
-The [Yeoman](http://yeoman.io/) scaffolding tool allows us to do the actual generation of the starter project, including all of the various subdirectories, dependencies, and files it contains. Prior to scaffolding out the project, it allows us to ask the user for input and use their answers to determine what to include in the project folder.
+The [Yeoman](http://yeoman.io/) scaffolding tool allows us to do the actual creation of the starter project, including its various folders, dependencies, and files.
 
-After running `yo foundation-browserify`, you will be asked a series of project configuration questions about the following libraries that will ultimately determine what goes into your starter project folder.
+After running `yo foundation-browserify`, you will be asked a series of project configuration questions that will ultimately determine what goes into your starter project folder.
 
 #### Foundation Framework
 
-The [Foundation](http://foundation.zurb.com/) framework is the most advanced responsive front-end framework in the world. This generator provides the option to scaffold out either a Foundation 6 or Foundation 5 project.
+The [Foundation](http://foundation.zurb.com/) framework from [Zurb](https://github.com/zurb) is the most advanced responsive front-end framework in the world. This generator provides the option to scaffold out either a Foundation 6 or Foundation 5 project.
 
 #### Browserify
 
@@ -128,7 +128,7 @@ This generator uses [LibSass](http://sass-lang.com/libsass). Foundation 5 projec
 
 #### Bourbon Sass Mixin Library
 
-The [Bourbon](http://bourbon.io/) library includes a number of useful Sass mixins, saving you from reinventing the wheel.
+The [Bourbon](http://bourbon.io/) library includes a number of useful Sass mixins, saving you from having to reinvent the wheel.
 
 #### Motion UI Sass Library
 
