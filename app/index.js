@@ -28,7 +28,8 @@ module.exports = yeoman.generators.Base.extend({
       choices: [
         'Foundation 6',
         'Foundation 5'
-      ]
+      ],
+      store: true
     },
     {
       when: function(response) {
@@ -63,7 +64,8 @@ module.exports = yeoman.generators.Base.extend({
         {
           name: 'Jade Templating'
         }
-      ]
+      ],
+      store: true
     },
     {
       when: function(response) {
@@ -75,7 +77,8 @@ module.exports = yeoman.generators.Base.extend({
       choices: [
         'LibSass',
         'Compass'
-      ]
+      ],
+      store: true
     },
     {
       when: function(response) {
@@ -102,7 +105,8 @@ module.exports = yeoman.generators.Base.extend({
         {
           name: 'Jade Templating'
         }
-      ]
+      ],
+      store: true
     }
     ];
 
