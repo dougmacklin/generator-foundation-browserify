@@ -17,6 +17,7 @@ Head to the [Quick Start Guide](#quick-start) if you're ready to go. If you're n
 * Autoprefixer for CSS Vendor Prefixes (option)
 * Bourbon Sass Mixin Library (option)
 * Motion UI Sass Library (option for Foundation 6)
+* Source Maps (option)
 * Font Awesome iconic font (option)
 * Jade Template Engine (option)
 
@@ -133,6 +134,10 @@ The [Bourbon](http://bourbon.io/) library includes a number of useful Sass mixin
 #### Motion UI Sass Library
 
 Created by Zurb, the same company responsible for Foundation, [Motion UI](http://zurb.com/playground/motion-ui) allows you to create flexible CSS transitions and animations. Several of Foundation's own components use it, so be sure to include it if you plan on using one of them.
+
+#### Source Maps
+
+Source Maps allow us to better debug production-ready minified code with ease by creating a file that maps the compressed code back to it's original source.
 
 #### Font Awesome iconic font
 

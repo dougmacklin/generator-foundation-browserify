@@ -59,6 +59,10 @@ module.exports = yeoman.generators.Base.extend({
           name: 'Bourbon Sass Mixin Library'
         },
         {
+          name: 'Source Maps',
+          checked: true
+        },
+        {
           name: 'Font Awesome Icons'
         },
         {
@@ -100,6 +104,10 @@ module.exports = yeoman.generators.Base.extend({
           name: 'Bourbon Sass Mixin Library'
         },
         {
+          name: 'Source Maps',
+          checked: true
+        },
+        {
           name: 'Font Awesome Icons'
         },
         {
@@ -118,6 +126,7 @@ module.exports = yeoman.generators.Base.extend({
       if ( (props.options).indexOf('Flexbox-powered grid') !== -1 ) this.props.flexbox = true;
       if ( (props.options).indexOf('Motion UI Sass Library') !== -1 ) this.props.motionUI = true;
       if ( (props.options).indexOf('Bourbon Sass Mixin Library') !== -1 ) this.props.bourbon = true;
+      if ( (props.options).indexOf('Source Maps') !== -1 ) this.props.sourcemaps = true;
       if ( (props.options).indexOf('Jade Templating') !== -1 ) this.props.jade = true;
       if ( (props.options).indexOf('Font Awesome Icons') !== -1 ) this.props.fontAwesome = true;
       if ( props.scssCompiler === 'Compass' ) this.props.compass = true;

@@ -39,8 +39,8 @@ function bundle() {
     .on('error', onError)
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(!prod ? sourcemaps.init() : gutil.noop())
-    <% if (props.babel) { %>.pipe(prod ? babel({
+    <% if (props.sourcemaps) { %>.pipe(sourcemaps.init())
+    <% } %><% if (props.babel) { %>.pipe(prod ? babel({
       presets: ['es2015']
     }) : gutil.noop())
     <% } %>.pipe(concat('bundle.js'))
