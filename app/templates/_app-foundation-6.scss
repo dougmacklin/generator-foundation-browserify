@@ -42,5 +42,7 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
+<% if (props.flexbox) { %>@include foundation-flex-classes;<% } %>
+
 <% if (props.motionUI) { %>@include motion-ui-transitions;
 @include motion-ui-animations;<% } %>

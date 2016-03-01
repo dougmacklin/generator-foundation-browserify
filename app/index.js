@@ -40,7 +40,7 @@ module.exports = yeoman.generators.Base.extend({
       message: 'What would you like to include?',
       choices: [
         {
-          name: 'Flexbox-powered grid',
+          name: 'Flexbox',
           checked: true
         },
         {
@@ -123,7 +123,7 @@ module.exports = yeoman.generators.Base.extend({
 
       if ( (props.options).indexOf('Babel for ECMAScript 6') !== -1 ) this.props.babel = true;
       if ( (props.options).indexOf('Autoprefixer') !== -1 ) this.props.autoprefixer = true;
-      if ( (props.options).indexOf('Flexbox-powered grid') !== -1 ) this.props.flexbox = true;
+      if ( (props.options).indexOf('Flexbox') !== -1 ) this.props.flexbox = true;
       if ( (props.options).indexOf('Motion UI Sass Library') !== -1 ) this.props.motionUI = true;
       if ( (props.options).indexOf('Bourbon Sass Mixin Library') !== -1 ) this.props.bourbon = true;
       if ( (props.options).indexOf('Source Maps') !== -1 ) this.props.sourcemaps = true;
