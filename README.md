@@ -2,7 +2,7 @@
 
 Improve your workflow by harnessing the power of [Browserify](http://browserify.org/) with your [Foundation](http://foundation.zurb.com/) projects!
 
-Head to the [Quick Start Guide](#quick-start) if you're ready to go. If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check out the [Wiki](https://github.com/dougmacklin/generator-foundation-browserify/wiki).
+Head to the [Quick Start Guide](#quick-start) if you're ready to go. If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check out the [Generator Overview Wiki](https://github.com/dougmacklin/generator-foundation-browserify/wiki/Generator-Overview).
 
 ## This Generator Comes With
 
