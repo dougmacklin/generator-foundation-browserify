@@ -24,11 +24,11 @@
     "browserify-shim": "^3.8.6",
     "gulp": "^3.8.11",<% if (props.autoprefixer) { %>
     "gulp-autoprefixer": "^3.1.0",<% } %><% if (props.babel) { %>
-    "gulp-babel": "^6.1.1",<% } %><% if (props.compass) { %>
+    "gulp-babel": "^6.1.1",<% } %>
+    "gulp-clean-css": "^2.2.2",<% if (props.compass) { %>
     "gulp-compass": "^2.0.4",<% } %>
     "gulp-concat": "^2.6.0",<% if (props.jade) { %>
-    "gulp-jade": "^1.0.0",<% } %>
-    "gulp-minify-css": "^1.1.1",<% if (!props.jade) { %>
+    "gulp-jade": "^1.0.0",<% } %><% if (!props.jade) { %>
     "gulp-minify-html": "^1.0.2",<% } %><% if (!props.compass) { %>
     "gulp-sass": "^2.0.0",<% } %>
     "gulp-sequence": "^0.3.2",

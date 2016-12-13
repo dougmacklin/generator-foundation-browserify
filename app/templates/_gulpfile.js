@@ -10,7 +10,7 @@ var gulpSequence = require('gulp-sequence');
 <% if (!props.compass) { %>var sass         = require('gulp-sass');<% } else { %>var compass      = require('gulp-compass');<% } %>
 <% if (props.autoprefixer) { %>var autoprefixer = require('gulp-autoprefixer');<% } %>
 var watch        = require('gulp-watch');
-var minifycss    = require('gulp-minify-css');
+var cleanCSS    = require('gulp-clean-css');
 var uglify       = require('gulp-uglify');
 var streamify    = require('gulp-streamify');
 var sourcemaps   = require('gulp-sourcemaps');
@@ -65,7 +65,7 @@ gulp.task('html', function() {
       includePaths: [].concat(<% if (props.bourbon) { %>require('node-bourbon').includePaths, <% } %>['node_modules/foundation-sites/scss'<% if (props.motionUI) { %>, 'node_modules/motion-ui/src'<% } %>])
     }))
     .on('error', onError)
-    .pipe(prod ? minifycss() : gutil.noop())
+    .pipe(prod ? cleanCSS() : gutil.noop())
     <% if (props.autoprefixer) { %>.pipe(prod ? autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -80,7 +80,7 @@ gulp.task('html', function() {
       sass: 'src/scss'
     }))
     .on('error', onError)
-    .pipe(prod ? minifycss() : gutil.noop())
+    .pipe(prod ? cleanCSS() : gutil.noop())
     <% if (props.autoprefixer) { %>.pipe(prod ? autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
