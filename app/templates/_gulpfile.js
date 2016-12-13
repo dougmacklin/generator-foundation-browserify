@@ -6,7 +6,7 @@ var buffer       = require('vinyl-buffer');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
 var gulpSequence = require('gulp-sequence');
-<% if (props.jade) { %>var processhtml  = require('gulp-jade');<% } else { %>var processhtml  = require('gulp-minify-html');<% } %>
+<% if (props.pug) { %>var processhtml  = require('gulp-pug');<% } else { %>var processhtml  = require('gulp-minify-html');<% } %>
 <% if (!props.compass) { %>var sass         = require('gulp-sass');<% } else { %>var compass      = require('gulp-compass');<% } %>
 <% if (props.autoprefixer) { %>var autoprefixer = require('gulp-autoprefixer');<% } %>
 var watch        = require('gulp-watch');

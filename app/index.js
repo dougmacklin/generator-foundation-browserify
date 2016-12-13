@@ -66,7 +66,7 @@ module.exports = yeoman.generators.Base.extend({
           name: 'Font Awesome Icons'
         },
         {
-          name: 'Jade Templating'
+          name: 'Pug Templating'
         }
       ],
       store: true
@@ -111,7 +111,7 @@ module.exports = yeoman.generators.Base.extend({
           name: 'Font Awesome Icons'
         },
         {
-          name: 'Jade Templating'
+          name: 'Pug Templating'
         }
       ],
       store: true
@@ -127,7 +127,7 @@ module.exports = yeoman.generators.Base.extend({
       if ( (props.options).indexOf('Motion UI Sass Library') !== -1 ) this.props.motionUI = true;
       if ( (props.options).indexOf('Bourbon Sass Mixin Library') !== -1 ) this.props.bourbon = true;
       if ( (props.options).indexOf('Source Maps') !== -1 ) this.props.sourcemaps = true;
-      if ( (props.options).indexOf('Jade Templating') !== -1 ) this.props.jade = true;
+      if ( (props.options).indexOf('Pug Templating') !== -1 ) this.props.pug = true;
       if ( (props.options).indexOf('Font Awesome Icons') !== -1 ) this.props.fontAwesome = true;
       if ( props.scssCompiler === 'Compass' ) this.props.compass = true;
 
@@ -142,9 +142,9 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_README.md', 'README.md');
     this.copy('_.gitignore', '.gitignore');
 
-    // html / jade templates
-    if (this.props.jade)
-      this.copy('_index.jade', 'src/templates/index.jade');
+    // html / pug templates
+    if (this.props.pug)
+      this.copy('_index.pug', 'src/templates/index.pug');
     else
       this.copy('_index.html', 'src/templates/index.html');
 

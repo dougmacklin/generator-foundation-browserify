@@ -27,8 +27,8 @@
     "gulp-babel": "^6.1.1",<% } %>
     "gulp-clean-css": "^2.2.2",<% if (props.compass) { %>
     "gulp-compass": "^2.0.4",<% } %>
-    "gulp-concat": "^2.6.0",<% if (props.jade) { %>
-    "gulp-jade": "^1.0.0",<% } %><% if (!props.jade) { %>
+    "gulp-concat": "^2.6.0",<% if (props.pug) { %>
+    "gulp-pug": "^3.2.0",<% } %><% if (!props.pug) { %>
     "gulp-minify-html": "^1.0.2",<% } %><% if (!props.compass) { %>
     "gulp-sass": "^2.0.0",<% } %>
     "gulp-sequence": "^0.3.2",

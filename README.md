@@ -19,7 +19,7 @@ Head to the [Quick Start Guide](#quick-start) if you're ready to go. If you're n
 * Motion UI Sass Library (option for Foundation 6)
 * Source Maps (option)
 * Font Awesome iconic font (option)
-* Jade Template Engine (option)
+* Pug Template Engine (option)
 
 ## <a name="quick-start"></a>Quick Start Guide
 
@@ -63,7 +63,7 @@ Include the `--prod` flag to export production-ready minified files (note: incre
 gulp --prod
 ```
 
-Edit the html/jade, scss and js files in the `src` directory
+Edit the html/pug, scss and js files in the `src` directory
 
 Gulp will serve finalized versions to the `build` directory
 
