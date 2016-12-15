@@ -1,7 +1,6 @@
 @charset 'utf-8';
 
 <% if (props.bourbon) { %>@import "bourbon";<% } %>
-<% if (props.compass) { %>@import "compass/css3";<% } %>
 @import 'settings';
 @import 'foundation';<% if (props.motionUI) { %>
 @import 'motion-ui';<% } %>
