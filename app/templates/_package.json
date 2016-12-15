@@ -44,7 +44,7 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
-    <% if (props.foundationVersion === 'Foundation 6') { %>"foundation-sites": "^6.2.4"<% } else { %>"foundation-sites": "^5.5.3"<% } %>,
+    <% if (props.foundationVersion === 'Foundation 6') { %>"foundation-sites": "^6.3.0"<% } else { %>"foundation-sites": "^5.5.3"<% } %>,
     <% if (props.foundationVersion === 'Foundation 6') { %>"jquery": "^2.1.4"<% } else { %>"jquery": "2.1.4"<% } %>
   },
   "browser": {
