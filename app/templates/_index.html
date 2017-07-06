@@ -11,16 +11,33 @@
 </head>
 
 <body>
-  <div class="row">
+  <% if (props.foundationVersion === 'Foundation 6') { %>
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="large-auto cell">
+        <h1>Foundation + Browserify Project Generator</h1>
+
+        <p>Improve your workflow by harnessing the power of <a href="http://browserify.org/" target="_blank">Browserify</a>          with your <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> projects!</p>
+
+        <p>If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check
+          out the <a href="https://github.com/dougmacklin/generator-foundation-browserify/wiki/Generator-Overview" target="_blank">Generator Overview</a>.</p>
+
+        <p><strong>Please note that this generator now defaults to Foundation 6.4.0's <a href="http://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">XY Grid</a>. If you'd prefer to use the legacy <a href="http://foundation.zurb.com/sites/docs/flex-grid.html" target="_blank">Flex grid</a> or <a href="http://foundation.zurb.com/sites/docs/grid.html" target="_blank">Float grid</a>, navigate to <code>scss/app.scss</code> and uncomment your desired grid (<code>@include foundation-grid;</code> or <code>@include foundation-flex-grid;</code>) and comment out <code>@include foundation-xy-grid-classes;</code></strong></p>
+      </div>
+    </div>
+  </div><% } else { %><div class="row">
     <div class="small-12 columns">
       <h1>Foundation + Browserify Project Generator</h1>
 
-      <p>Improve your workflow by harnessing the power of <a href="http://browserify.org/" target="_blank">Browserify</a> with your <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> projects!</p>
+      <p>Improve your workflow by harnessing the power of <a href="http://browserify.org/" target="_blank">Browserify</a> with
+        your <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> projects!</p>
 
-      <p>If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check out the <a href="https://github.com/dougmacklin/generator-foundation-browserify/wiki/Generator-Overview" target="_blank">Generator Overview</a>.</p>
+      <p>If you're not sure why you should be using this generator, or aren't familiar with some of the tools it offers, check
+        out the <a href="https://github.com/dougmacklin/generator-foundation-browserify/wiki/Generator-Overview" target="_blank">Generator Overview</a>.</p>
     </div>
   </div>
-  <script src="js/bundle.js"></script>
+
+  <script src="js/bundle.js"></script><% } %>
 </body>
 
 </html>
