@@ -40,10 +40,6 @@ module.exports = yeoman.generators.Base.extend({
       message: 'What would you like to include?',
       choices: [
         {
-          name: 'Flexbox',
-          checked: true
-        },
-        {
           name: 'Babel for ECMAScript 6',
           checked: true
         },
